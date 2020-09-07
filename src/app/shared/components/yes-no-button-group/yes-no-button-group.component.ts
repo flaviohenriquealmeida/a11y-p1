@@ -14,9 +14,9 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
   ]
 })
 export class YesNoButtonGroupComponent implements OnInit, ControlValueAccessor {
-  public value: string = null;
+  @Input() public value: string = null;
   @Input() public label = '';
-  public valueChange = new EventEmitter<string>();
+  @Output() public valueChange = new EventEmitter<string>();
   public options = YesNoButtonGroupOptions;
   public onChange = (value: string) => {};
   public onTouched = () => {};
